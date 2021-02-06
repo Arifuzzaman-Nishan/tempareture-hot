@@ -26,6 +26,7 @@ getId("search-btn").addEventListener("click", () => {
 
             const icon = data.weather[0].icon;
             // getId("icon-id").innerText = ""
+            const iconImg = getId("icon-img").src = 'https://openweathermap.org/img/wn/'+icon+'.png';
 
             console.log(data);
         })
