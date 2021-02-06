@@ -6,16 +6,13 @@ getId = (id) => {
 }
 
 
-
-
-
 getId("search-btn").addEventListener("click", () => {
     const city = getId("input-text").value;
     getId("city-name").innerText = city;
 
     fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`
-      )
+    )
         .then(res => res.json())
         .then(data => {
             const tempValue = data.main.temp;
@@ -25,10 +22,7 @@ getId("search-btn").addEventListener("click", () => {
             getId("description").innerText = text;
 
             const icon = data.weather[0].icon;
-            // getId("icon-id").innerText = ""
-            const iconImg = getId("icon-img").src = 'https://openweathermap.org/img/wn/'+icon+'.png';
-
-            console.log(data);
+            getId("icon-img").src = 'https://openweathermap.org/img/wn/' + icon + '.png';
         })
 })
 
